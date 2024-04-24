@@ -5,6 +5,6 @@ if(!$con) {
     echo mysqli_connect_error();
 }
 
-$con->set_charset('utf-8');
+$con->set_charset('utf8');
 
 ?>

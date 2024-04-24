@@ -153,6 +153,28 @@
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" integrity="sha256-A+2opyqhvbBV8tbd9mIM8w9zvvMYHOawY03BQRtq7Kw=" crossorigin="anonymous"></script>
 <!-- Swiper Js -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Alertify JS -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script>
+    <?php
+    if(isset($_SESSION['message_success'])) {
+    ?>
+    alertify.set('notifier', 'position', 'top-center');
+    alertify.success('<?php echo $_SESSION['message_success']; ?>');
+    <?php
+    unset($_SESSION['message_success']); }
+     ?>
+</script>
+<script>
+    <?php
+    if(isset($_SESSION['message_error'])) {
+    ?>
+    alertify.set('notifier', 'position', 'top-center');
+    alertify.error('<?php echo $_SESSION['message_error']; ?>');
+    <?php
+    unset($_SESSION['message_error']); }
+     ?>
+</script>
 <!-- Custom js -->
 <script src="./assets/js/index.js"></script>
 </body>

@@ -25,7 +25,7 @@
     <header class="relative pb-24 py-5 lg:pb-40 overflow-hidden ">
         <div class="hidden md:block absolute top-0 left-0 w-1/6 lg:w-2/6 h-full rounded-br-2xl bg-[#97AFB9]"></div>
         <!-- navbar -->
-        <nav class="relative py-6 bg-transparent mb-12 md:mb-24 z-50 pt-10">
+        <nav class="relative py-6 bg-transparent mb-12 md:mb-24 pt-10">
             <div class="container px-4 mx-auto">
                 <div class="flex items-center relative">
                     <a class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-block text-lg font-bold" href="#">

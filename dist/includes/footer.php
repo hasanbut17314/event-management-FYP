@@ -135,6 +135,8 @@
     </div>
 </footer>
 
+<!-- Alertify JS -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 <!-- gsap -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- scrollTrigger -->
@@ -153,8 +155,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js" integrity="sha256-A+2opyqhvbBV8tbd9mIM8w9zvvMYHOawY03BQRtq7Kw=" crossorigin="anonymous"></script>
 <!-- Swiper Js -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- Alertify JS -->
-<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<!-- Custom js -->
+<script src="./assets/js/index.js"></script>
 <script>
     <?php
     if(isset($_SESSION['message_success'])) {
@@ -175,8 +177,6 @@
     unset($_SESSION['message_error']); }
      ?>
 </script>
-<!-- Custom js -->
-<script src="./assets/js/index.js"></script>
 </body>
 
 </html>

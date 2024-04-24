@@ -22,7 +22,7 @@
 <body class="bg-[#EFFBFF]">
     <!-- Navbar -->
     <header class="relative py-5  overflow-hidden ">
-        <nav class="relative py-6 bg-transparent z-50 pt-10">
+        <nav class="relative py-6 bg-transparent pt-10">
             <div class="container px-4 mx-auto">
                 <div class="flex items-center relative">
                     <a class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-block text-lg font-bold" href="#">

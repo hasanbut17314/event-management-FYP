@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "config.php";
 if (isset($_POST['confirm_booking_btn'])) {
 
@@ -27,7 +28,7 @@ if (isset($_POST['confirm_booking_btn'])) {
 
         if ($result) 
         {
-            $_SESSION['message_success'] = "Booking successful!";
+            $_SESSION['message_success'] = "Booking successful! Our team will contact you through your mail";
             header("Location: ../index.php");
             exit;
         } 

@@ -40,3 +40,17 @@ if (isset($_POST['confirm_booking_btn'])) {
         }
     }
 }
+
+else if(isset($_POST['cancel_booking_btn'])) {
+    $delete_query = "DELETE FROM booking";
+    $result = mysqli_query($con, $delete_query);
+    if ($result) {
+        $_SESSION['message_error'] = "Booking cancelled successfully";
+        header("Location: ../index.php");
+        exit;
+    } else {
+        $_SESSION['message_error'] = "Failed! Something went wrong, Try Again";
+        header("Location: ../index.php");
+        exit;
+    }
+}

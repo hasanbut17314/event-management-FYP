@@ -4,17 +4,9 @@ $select_query = "SELECT * FROM booking LIMIT 1";
 $result = mysqli_query($con, $select_query);
 $row = mysqli_fetch_assoc($result);
  ?>
-<style>
-    .booking_detail {
-        font-family: "Poppins", sans-serif !important;
-        font-weight: 500;
-    }
-    .booking_detail p {
-        margin-bottom: 8px;
-    }
-</style>
 <section class="px-3 py-4 my-5 booking_detail">
-    <div class="grid grid-cols-2 py-4 bg-white md:px-5 px-4 rounded-lg w-1/2">
+    <h1 class="b-head">Booking Details</h1>
+    <div class="grid grid-cols-2 py-4 bg-white md:px-5 px-4 rounded-lg w-half">
         <div>
             <p>Client Name</p>
             <p>Email</p>
@@ -26,7 +18,7 @@ $row = mysqli_fetch_assoc($result);
             <p>Payment Method</p>
             <p>Booking Created at</p>
         </div>
-        <div>
+        <div class="book_dnm">
             <p><?= $row['name'] ?></p>
             <p><?= $row['email'] ?></p>
             <p><?= $row['phone'] ?></p>
@@ -37,6 +29,9 @@ $row = mysqli_fetch_assoc($result);
             <p><?= $row['payment_method'] ?></p>
             <p><?= $row['created_at'] ?></p>
         </div>
+        <form action="code/codes.php" method="post" class="mt-3 py-3">
+            <button type="submit" class="cancel_btn" name="cancel_booking_btn">Cancel Booking</button>
+        </form>
     </div>
 </section>
 

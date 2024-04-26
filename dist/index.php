@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php 
+session_start();
+require "code/config.php";
+$select_query = "SELECT * FROM booking";
+$result = mysqli_query($con, $select_query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,11 +57,25 @@
                     </ul>
                     <div class="hidden lg:block ml-auto">
                         <div class="flex items-center">
+                        <?php
+                            if(mysqli_num_rows($result) === 0) {
+                            ?>
                             <a class="relative group inline-block py-3 px-5 text-sm font-semibold text-black hover:text-white border border-gray-400 rounded-md overflow-hidden transition duration-300" href="./form.php?key=<?= password_hash('72615251727', PASSWORD_DEFAULT) ?>">
                                 <div class="absolute top-0 right-full w-full h-full bg-[#97AFB9] transform group-hover:translate-x-full group-hover:scale-102 transition duration-500">
                                 </div>
                                 <span class="relative">Book Here</span>
                             </a>
+                            <?php
+                            } else {
+                            ?>
+                            <a class="relative group inline-block py-3 px-5 text-sm font-semibold text-black hover:text-white border border-gray-400 rounded-md overflow-hidden transition duration-300" href="./bookingdetails.php">
+                                <div class="absolute top-0 right-full w-full h-full bg-[#97AFB9] transform group-hover:translate-x-full group-hover:scale-102 transition duration-500">
+                                </div>
+                                <span class="relative">See Booking</span>
+                            </a>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 <?php 
 session_start();
 require "code/config.php";
+$select_query = "SELECT * FROM booking";
+$result = mysqli_query($con, $select_query);
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +24,7 @@ require "code/config.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/output.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
 </head>
 
@@ -45,21 +48,35 @@ require "code/config.php";
                     </div>
                     <ul class="hidden lg:flex lg:w-auto lg:space-x-12">
                         <li>
-                            <a class=" inline-block text-base text-[#111827] hover:text-white transition duration-500 font-semibold tracking-tight" href="./index.php">Home</a>
+                            <a class=" inline-block text-base text-[#111827] text-hover transition duration-500 font-semibold tracking-tight" href="./index.php">Home</a>
                         </li>
-                        <li><a class=" inline-block text-base text-[#111827] hover:text-white transition duration-500 font-semibold tracking-tight" href="./about.php">About</a></li>
+                        <li><a class=" inline-block text-base text-[#111827] text-hover transition duration-500 font-semibold tracking-tight" href="./about.php">About</a></li>
                         <li>
-                            <a class=" inline-block text-base text-[#111827] hover:text-white transition duration-500 font-semibold tracking-tight" href="./service.php">Service</a>
+                            <a class=" inline-block text-base text-[#111827] text-hover transition duration-500 font-semibold tracking-tight" href="./service.php">Service</a>
                         </li>
-                        <li><a class=" inline-block text-base text-[#111827] hover:text-white transition duration-500 font-semibold tracking-tight" href="./gallery.php">Gallery</a></li>
+                        <li><a class=" inline-block text-base text-[#111827] text-hover transition duration-500 font-semibold tracking-tight" href="./gallery.php">Gallery</a></li>
                     </ul>
                     <div class="hidden lg:block ml-auto">
                         <div class="flex items-center">
+                            <?php
+                            if(mysqli_num_rows($result) === 0) {
+                            ?>
                             <a class="relative group inline-block py-3 px-5 text-sm font-semibold text-black hover:text-white border border-gray-400 rounded-md overflow-hidden transition duration-300" href="./form.php?key=<?= password_hash('72615251727', PASSWORD_DEFAULT) ?>">
                                 <div class="absolute top-0 right-full w-full h-full bg-[#97AFB9] transform group-hover:translate-x-full group-hover:scale-102 transition duration-500">
                                 </div>
                                 <span class="relative">Book Here</span>
                             </a>
+                            <?php
+                            } else {
+                            ?>
+                            <a class="relative group inline-block py-3 px-5 text-sm font-semibold text-black hover:text-white border border-gray-400 rounded-md overflow-hidden transition duration-300" href="./bookingdetails.php">
+                                <div class="absolute top-0 right-full w-full h-full bg-[#97AFB9] transform group-hover:translate-x-full group-hover:scale-102 transition duration-500">
+                                </div>
+                                <span class="relative">See Booking</span>
+                            </a>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
